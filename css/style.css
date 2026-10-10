@@ -219,17 +219,15 @@ section > * { max-width: var(--w); margin-left: auto; margin-right: auto; }
     font-weight: 800;
     margin-bottom: 12px;
 }
-.pain h3::before {
-    content: "";
+.pain .pi {
     display: block;
-    width: 34px;
-    height: 10px;
+    width: 22px; height: 22px;
+    padding: 9px;
     margin-bottom: 18px;
-    /* 펜슬 선 같은 거친 획 */
-    background: var(--muted);
-    border-radius: 60% 40% 70% 30% / 60% 50% 50% 40%;
-    opacity: .5;
-    transform: rotate(-6deg);
+    box-sizing: content-box;
+    border-radius: 12px;
+    background: rgba(201, 154, 114, .12);
+    border: 1px solid rgba(201, 154, 114, .25);
 }
 .pain p { color: var(--muted); font-size: 16px; }
 
