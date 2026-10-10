@@ -202,6 +202,41 @@ section > * { max-width: var(--w); margin-left: auto; margin-right: auto; }
 .compare figcaption { margin-top: 14px; font-size: 14px; color: var(--muted); text-align: center; }
 
 /* ── ② 도입 배경 ─────────────────────── */
+/* ── ② 고객의 말 ──────────────────── */
+.ask-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(24px, 4vw, 48px); }
+.ask-label { font-size: 14px; font-weight: 700; letter-spacing: .04em; color: var(--gold); margin-bottom: 14px; }
+.bubbles { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.bubbles li {
+    justify-self: start;
+    max-width: 100%;
+    padding: 12px 18px;
+    border-radius: 18px 18px 18px 4px;
+    background: var(--ink-3);
+    border: 1px solid var(--line);
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(17px, 2vw, 20px);
+}
+.bubbles li:nth-child(2) { margin-left: clamp(12px, 3vw, 36px); }
+.bubbles li:nth-child(3) { margin-left: clamp(24px, 6vw, 72px); }
+.bubbles-worry li { background: rgba(201, 154, 114, .12); border-color: var(--gold-lo); }
+.bubbles-sm li { font-size: 16px; padding: 9px 15px; }
+.bubbles-sm li:nth-child(n) { margin-left: 0; }
+.ask-text { margin-top: 20px; color: var(--muted); }
+.ask-text strong { color: var(--gold-hi); }
+.ask-punch {
+    margin-top: clamp(48px, 7vw, 80px);
+    padding-top: clamp(32px, 5vw, 48px);
+    border-top: 1px solid var(--line);
+    text-align: center;
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: clamp(26px, 4vw, 42px);
+    line-height: 1.35;
+}
+.ask-punch em { font-style: normal; color: var(--gold-hi); }
+@media (max-width: 900px) { .ask-grid { grid-template-columns: minmax(0, 1fr); } }
+
 .why { background: var(--ink-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .pain-grid {
     display: grid;
@@ -452,6 +487,12 @@ section > * { max-width: var(--w); margin-left: auto; margin-right: auto; }
 .price-left strong { color: var(--gold-hi); }
 .price-incl { list-style: none; padding: 18px 0 0; margin: 8px 0 0; border-top: 1px solid var(--line); display: grid; gap: 6px; font-size: 15px; }
 .price-incl li::before { content: "✓"; color: var(--gold); margin-right: 10px; font-weight: 700; }
+.price-day { margin-top: 6px; padding: 12px 14px; border-radius: 10px; background: rgba(18, 14, 20, .5); font-size: 15px; }
+.price-day strong { color: var(--gold-hi); }
+.price-day span { display: block; font-size: 12px; color: var(--muted); }
+.price-faq { margin-top: 28px; padding: 22px; border-radius: var(--radius); background: var(--ink); border: 1px solid var(--line); display: grid; gap: 8px; }
+.price-faq-q { font-family: var(--f-display); font-weight: 800; font-size: 19px; color: var(--gold-hi); }
+.price-faq p:not(.price-faq-q) { color: var(--muted); font-size: 15px; }
 .price-btn { margin-top: 18px; justify-self: stretch; }
 .price-how { font-size: 13px; color: var(--muted); text-align: center; }
 .price-rule h3 { font-family: var(--f-display); font-size: clamp(20px, 2.2vw, 24px); font-weight: 800; margin-bottom: 18px; }

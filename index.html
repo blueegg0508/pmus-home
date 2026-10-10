@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Nanum+Myeongjo:wght@700;800&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-<link rel="stylesheet" href="css/style.css?v=11">
+<link rel="stylesheet" href="css/style.css?v=12">
 </head>
 <body>
 
@@ -24,6 +24,7 @@
     <span class="brand-sub">Permanent Makeup Simulator</span>
   </a>
   <nav class="top-nav" aria-label="주요 메뉴">
+    <a href="#ask">고객의 말</a>
     <a href="#why">도입 배경</a>
     <a href="#voice">현장의 목소리</a>
     <a href="#features">기능</a>
@@ -69,7 +70,36 @@
     </figure>
   </section>
 
-  <!-- ② 도입 배경 -->
+  <!-- ② 고객의 말 (예전 랜딩에서 김유미 원장님이 잘 읽힌다고 한 문구를 옮김) -->
+  <section class="ask" id="ask">
+    <div class="section-head">
+      <p class="eyebrow">상담실에서 매일 듣는 말</p>
+      <h2>원장님 머릿속엔 이미 그려져 있어도,<br>고객은 모릅니다.</h2>
+    </div>
+    <div class="ask-grid">
+      <div class="ask-col">
+        <p class="ask-label">고객의 요청</p>
+        <ul class="bubbles">
+          <li>“무조건 일자 눈썹으로 해 주세요.”</li>
+          <li>“그 연예인 눈썹처럼 해 주세요.”</li>
+          <li>“절대 진하지 않게 해 주세요.”</li>
+        </ul>
+        <p class="ask-text">일자 눈썹이 어울리지 않아도, 그 연예인과 얼굴형이 달라도, 원래 눈썹이 두껍고 진해 연하게 하기 어려워도… 아무리 자세히 말로 설명해도, 고객이 시술 후 자기 모습을 정확히 떠올리기는 어렵습니다.</p>
+      </div>
+      <div class="ask-col">
+        <p class="ask-label">고객의 불안</p>
+        <ul class="bubbles bubbles-worry">
+          <li>“나한테 정말 어울릴까?”</li>
+          <li>“생각보다 진하면 어떡하지?”</li>
+          <li>“내가 원하는 모양과 다르면 어떡하지?”</li>
+        </ul>
+        <p class="ask-text">처음 받는 반영구에는 늘 이 불안이 함께 옵니다. PMUS는 이 불안을 <strong>시술 전에, 사진 한 장으로</strong> 줄여 드립니다.</p>
+      </div>
+    </div>
+    <p class="ask-punch">말로 설명하던 반영구 상담을,<br><em>눈으로 확인하는 상담으로.</em></p>
+  </section>
+
+  <!-- ③ 도입 배경 -->
   <section class="why" id="why">
     <div class="section-head">
       <p class="eyebrow">왜 만들었나</p>
@@ -124,7 +154,7 @@
     </div>
   </section>
 
-  <!-- ③ 현장의 목소리 -->
+  <!-- ④ 현장의 목소리 -->
   <section class="voice" id="voice">
     <div class="section-head">
       <p class="eyebrow">현장에서 설계한 솔루션</p>
@@ -162,7 +192,7 @@
     </div>
   </section>
 
-  <!-- ④ 주요 기능 -->
+  <!-- ⑤ 주요 기능 -->
   <section class="features" id="features">
     <div class="section-head">
       <p class="eyebrow">주요 기능</p>
@@ -324,7 +354,7 @@
     </article>
   </section>
 
-  <!-- ⑤ 그 밖의 기능 -->
+  <!-- ⑥ 그 밖의 기능 -->
   <section class="more" id="more">
     <div class="section-head">
       <p class="eyebrow">그 밖의 기능</p>
@@ -346,7 +376,7 @@
     </ul>
   </section>
 
-  <!-- ⑥ 쓰는 순서 -->
+  <!-- ⑦ 쓰는 순서 -->
   <section class="flow">
     <div class="section-head">
       <p class="eyebrow">상담 흐름</p>
@@ -356,7 +386,12 @@
       <img src="assets/img/pmus-consult-1.jpg" alt="상담 테이블에서 원장이 태블릿으로 고객에게 시술 전과 예상 디자인 비교 화면을 보여 주는 모습" width="900" height="1200" loading="lazy">
       <figcaption>
         <strong>상담 테이블에서,<br>태블릿 하나로.</strong>
-        <p>고객 사진을 찍고 그 자리에서 함께 화면을 봅니다. 시술 전과 예상 디자인을 나란히 두고 이야기하니, 말로 설명할 때보다 훨씬 빨리 합의가 됩니다.</p>
+        <ul class="bubbles bubbles-sm">
+          <li>“조금 더 얇게 해 주세요.”</li>
+          <li>“눈썹 꼬리를 조금만 바꿔 볼까요?”</li>
+          <li>“입술은 이것보다 자연스럽게 하고 싶어요.”</li>
+        </ul>
+        <p>고객의 요청을 그 자리에서 반영하고, 바뀐 모습을 바로 보여 주세요. 머릿속으로만 상상하던 상담이, 함께 보고 함께 결정하는 상담이 됩니다.</p>
         <span class="consult-note">태블릿 화면은 갤럭시 탭에서 실제 PMUS 앱을 쓴 모습입니다.</span>
       </figcaption>
     </figure>
@@ -367,12 +402,12 @@
     </ol>
   </section>
 
-  <!-- ⑦ 가격 — 판매 수(data-sold)만 실제 숫자로 바꾸면 남은 자리·현재 가격은 js/main.js 가 계산한다.
+  <!-- ⑧ 가격 — 판매 수(data-sold)만 실제 숫자로 바꾸면 남은 자리·현재 가격은 js/main.js 가 계산한다.
        결제 서버가 붙으면 서버가 이 숫자를 내려준다. 지어낸 숫자를 넣지 않는다. -->
   <section class="price" id="price" data-sold="0">
     <div class="section-head">
       <p class="eyebrow">얼리버드</p>
-      <h2>먼저 시작하는 50곳에,<br>가장 낮은 가격으로.</h2>
+      <h2>그래서, PMUS를 함께 시작할<br>첫 번째 원장님 50분을 찾습니다.</h2>
       <p class="section-lead">얼리버드가 끝나면 구매 한 건마다 1,000원씩 올라 정가 490,000원에서 멈춥니다. 빨리 시작할수록 낮은 가격입니다.</p>
     </div>
 
@@ -392,7 +427,10 @@
           <li>눈썹 · 입술 시뮬레이션 모든 기능</li>
           <li>iOS · Android, 기기 1대 등록</li>
           <li>등록 후 1년 사용</li>
+          <li>이용 기간 동안 기능 업데이트 추가 비용 없음</li>
+          <li>얼리버드 무료 세미나 — 설치부터 실전 상담까지</li>
         </ul>
+        <p class="price-day">하루로 나누면 <strong>약 795원</strong> · 커피 한 잔 값보다 적습니다 <span>(290,000원 ÷ 365일, VAT 별도)</span></p>
 
         <a class="btn price-btn" href="https://pf.kakao.com/_wkiFX" target="_blank" rel="noopener" data-p="cta">얼리버드로 신청하기</a>
         <p class="price-how">결제 연결 전까지는 카카오톡으로 신청을 받습니다.</p>
@@ -411,14 +449,19 @@
           <li>남은 자리와 현재 가격은 실제 판매 수로 표시합니다. 환불이 있어도 판매 수는 줄지 않습니다.</li>
           <li>라이선스 키 발급 전에는 전액 환불, 발급 후에는 환불되지 않습니다. <a href="refund.html">환불 규정 보기</a></li>
         </ul>
+
+        <div class="price-faq">
+          <p class="price-faq-q">“조금 더 기다렸다가 살까요?”</p>
+          <p>물론 괜찮습니다. PMUS는 원장님들의 현장 의견을 받아 계속 좋아집니다. 다만 얼리버드 50자리가 끝나면 구매 한 건마다 가격이 1,000원씩 올라갑니다. 지금 시작하시면 가장 낮은 가격으로, 앞으로 추가될 기능도 이용 기간 동안 함께 받아 보실 수 있습니다.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ⑦ 도입 신청 (다음 단계에서 결제와 바로 잇는다) -->
+  <!-- ⑨ 도입 신청 (다음 단계에서 결제와 바로 잇는다) -->
   <section class="apply" id="apply">
     <img class="apply-logo" src="assets/img/logo-full.png" alt="PMUS Permanent Makeup Simulator" width="560" height="401">
-    <h2>다음 상담부터,<br>결과를 먼저 보여주세요.</h2>
+    <h2>다음 상담부터,<br>눈으로 확인하는 상담으로.</h2>
     <p>라이선스 등록 한 번이면 바로 사용할 수 있습니다.</p>
     <div class="apply-cta">
       <!-- TODO: 결제 페이지 연결 -->
@@ -450,8 +493,8 @@
   </dl>
 </footer>
 
-<script src="js/pricing.js?v=11"></script>
-<script src="js/biz.js?v=11"></script>
-<script src="js/main.js?v=11"></script>
+<script src="js/pricing.js?v=12"></script>
+<script src="js/biz.js?v=12"></script>
+<script src="js/main.js?v=12"></script>
 </body>
 </html>
