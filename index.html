@@ -8,13 +8,13 @@
 <meta name="theme-color" content="#120E14">
 <meta property="og:title" content="PMUS — 바늘보다 먼저, 결과를 보여주세요">
 <meta property="og:description" content="고객 사진 한 장으로 시술 후 눈썹을 미리 보여주는 반영구 시뮬레이터">
-<meta property="og:image" content="assets/img/pmus-after.jpg">
+<meta property="og:image" content="assets/img/pmus2-after.jpg">
 <link rel="icon" href="assets/img/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Nanum+Myeongjo:wght@700;800&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-<link rel="stylesheet" href="css/style.css?v=4">
+<link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
 
@@ -55,9 +55,9 @@
 
     <figure class="compare" data-compare>
       <div class="compare-frame">
-        <img class="compare-after" src="assets/img/pmus-after.jpg" alt="눈썹과 입술 시술을 마친 예상 모습" width="800" height="1000">
+        <img class="compare-after" src="assets/img/pmus2-after.jpg" alt="눈썹과 입술 시술을 마친 예상 모습" width="800" height="1000">
         <div class="compare-before-wrap">
-          <img class="compare-before" src="assets/img/pmus-before.jpg" alt="시술 전 얼굴" width="800" height="1000">
+          <img class="compare-before" src="assets/img/pmus2-before.jpg" alt="시술 전 얼굴" width="800" height="1000">
         </div>
         <div class="compare-line" aria-hidden="true"><span>⇔</span></div>
         <span class="tag tag-l">시술 전</span>
@@ -168,8 +168,8 @@
     <article class="feat">
       <div class="feat-media">
         <div class="swap-frame">
-          <img class="swap-img is-on" data-design="after" src="assets/img/pmus-after.jpg" alt="눈썹과 입술 시술을 마친 예상 모습" width="800" height="1000">
-          <img class="swap-img" data-design="before" src="assets/img/pmus-before.jpg" alt="시술 전 얼굴" width="800" height="1000">
+          <img class="swap-img is-on" data-design="after" src="assets/img/pmus2-after.jpg" alt="눈썹과 입술 시술을 마친 예상 모습" width="800" height="1000">
+          <img class="swap-img" data-design="before" src="assets/img/pmus2-before.jpg" alt="시술 전 얼굴" width="800" height="1000">
         </div>
         <div class="chips" role="group" aria-label="디자인 고르기">
           <button class="chip is-on" data-pick="after">시술 후 · 눈썹 + 입술</button>
@@ -192,8 +192,8 @@
     <article class="feat feat-rev">
       <div class="feat-media">
         <div class="fade-frame">
-          <img src="assets/img/pmus-closeup-before.jpg" alt="시술 전 (가까이)" width="800" height="1000">
-          <img class="fade-top" src="assets/img/pmus-closeup-after.jpg" alt="눈썹과 입술 시술을 마친 모습 (가까이)" width="800" height="1000">
+          <img src="assets/img/pmus2-closeup-before.jpg" alt="시술 전 (가까이)" width="800" height="1000">
+          <img class="fade-top" src="assets/img/pmus2-closeup-after.jpg" alt="눈썹과 입술 시술을 마친 모습 (가까이)" width="800" height="1000">
         </div>
         <label class="fade-ctl">
           <span>시술 전 ↔ 후</span>
@@ -217,7 +217,7 @@
     <article class="feat">
       <div class="feat-media">
         <div class="auto-frame">
-          <img src="assets/img/pmus-after.jpg" alt="눈썹과 입술 자리를 인식해 표시한 모습" width="800" height="1000">
+          <img src="assets/img/pmus2-after.jpg" alt="눈썹과 입술 자리를 인식해 표시한 모습" width="800" height="1000">
           <svg class="scan" viewBox="0 0 800 1000" aria-hidden="true">
             <defs>
               <pattern id="scanGrid" width="12" height="12" patternUnits="userSpaceOnUse">
@@ -235,48 +235,48 @@
             </defs>
 
             <!-- 눈썹 · 입술 둘레의 촘촘한 격자 -->
-            <rect x="200" y="262" width="165" height="58" fill="url(#scanGrid)"/>
-            <rect x="425" y="262" width="150" height="58" fill="url(#scanGrid)"/>
-            <rect x="296" y="514" width="200" height="88" fill="url(#scanGrid)"/>
+            <rect x="226" y="286" width="146" height="50" fill="url(#scanGrid)"/>
+            <rect x="438" y="286" width="154" height="50" fill="url(#scanGrid)"/>
+            <rect x="314" y="544" width="182" height="92" fill="url(#scanGrid)"/>
 
             <!-- 앞눈꼬리 → 눈썹 앞머리 세로 기준선 -->
             <g class="scan-guide">
-              <line x1="335" y1="372" x2="335" y2="268"/>
-              <line x1="452" y1="372" x2="452" y2="268"/>
+              <line x1="352" y1="392" x2="352" y2="300"/>
+              <line x1="464" y1="392" x2="464" y2="300"/>
             </g>
 
             <!-- 인식한 선 -->
             <g class="scan-line" filter="url(#scanGlow)">
-              <polyline points="215,302 240,292 270,285 305,288 345,297"/>
-              <polyline points="440,297 470,289 495,286 525,290 550,297"/>
-              <path d="M315 545 Q345 534 370 536 Q384 531 397 536 Q410 531 425 536 Q450 534 477 544 Q440 586 395 588 Q350 586 315 545Z"/>
-              <path d="M315 545 Q395 556 477 544"/>
+              <polyline points="240,321 265,308 295,301 325,303 360,311"/>
+              <polyline points="450,309 490,301 530,304 555,310 580,321"/>
+              <path d="M330 575 Q352 565 385 559 Q394 556 402 563 Q411 556 420 558 Q455 565 480 575 Q450 615 405 616 Q360 615 330 575Z"/>
+              <path d="M330 575 Q405 582 480 575"/>
             </g>
 
             <!-- 인식한 점 -->
             <g class="scan-dots">
-              <circle cx="215" cy="302" r="4.5"/><circle cx="270" cy="285" r="4.5"/><circle cx="345" cy="297" r="4.5"/>
-              <circle cx="440" cy="297" r="4.5"/><circle cx="495" cy="286" r="4.5"/><circle cx="550" cy="297" r="4.5"/>
-              <circle cx="335" cy="358" r="3.8"/><circle cx="452" cy="358" r="3.8"/>
-              <circle cx="315" cy="545" r="4.5"/><circle cx="370" cy="536" r="4"/><circle cx="397" cy="535" r="4"/>
-              <circle cx="425" cy="536" r="4"/><circle cx="477" cy="544" r="4.5"/><circle cx="395" cy="588" r="4.5"/>
+              <circle cx="240" cy="321" r="4.5"/><circle cx="295" cy="301" r="4.5"/><circle cx="360" cy="311" r="4.5"/>
+              <circle cx="450" cy="309" r="4.5"/><circle cx="530" cy="304" r="4.5"/><circle cx="580" cy="321" r="4.5"/>
+              <circle cx="352" cy="378" r="3.8"/><circle cx="464" cy="377" r="3.8"/>
+              <circle cx="330" cy="575" r="4.5"/><circle cx="385" cy="559" r="4"/><circle cx="402" cy="563" r="4"/>
+              <circle cx="420" cy="558" r="4"/><circle cx="480" cy="575" r="4.5"/><circle cx="405" cy="616" r="4.5"/>
             </g>
 
             <!-- 모서리 표시 -->
             <g class="scan-corner">
-              <path d="M200 280V262H218M347 262H365V280M365 302V320H347M218 320H200V302"/>
-              <path d="M425 280V262H443M557 262H575V280M575 302V320H557M443 320H425V302"/>
-              <path d="M296 532V514H314M478 514H496V532M496 584V602H478M314 602H296V584"/>
+              <path d="M226 304V286H244M354 286H372V304M372 318V336H354M244 336H226V318"/>
+              <path d="M438 304V286H456M574 286H592V304M592 318V336H574M456 336H438V318"/>
+              <path d="M314 562V544H332M478 544H496V562M496 618V636H478M332 636H314V618"/>
             </g>
 
             <!-- 이름표 -->
             <g class="scan-tag">
-              <rect x="200" y="226" width="108" height="28" rx="14"/>
-              <text x="254" y="245">눈썹 인식 ✓</text>
-              <rect x="296" y="612" width="108" height="28" rx="14"/>
-              <text x="350" y="631">입술 인식 ✓</text>
-              <rect x="460" y="372" width="122" height="28" rx="14"/>
-              <text x="521" y="391">앞눈꼬리 기준</text>
+              <rect x="226" y="250" width="108" height="28" rx="14"/>
+              <text x="280" y="269">눈썹 인식 ✓</text>
+              <rect x="314" y="646" width="108" height="28" rx="14"/>
+              <text x="368" y="665">입술 인식 ✓</text>
+              <rect x="478" y="394" width="122" height="28" rx="14"/>
+              <text x="539" y="413">앞눈꼬리 기준</text>
             </g>
 
             <!-- 위에서 아래로 훑는 빛 -->
@@ -302,8 +302,8 @@
     <article class="feat feat-rev feat-pair">
       <div class="feat-media">
         <div class="pair">
-          <figure><img src="assets/img/pmus-before.jpg" alt="시술 전" width="800" height="1000"><figcaption>시술 전</figcaption></figure>
-          <figure><img src="assets/img/pmus-after.jpg" alt="시술 후" width="800" height="1000"><figcaption>시술 후 · 눈썹 + 입술</figcaption></figure>
+          <figure><img src="assets/img/pmus2-before.jpg" alt="시술 전" width="800" height="1000"><figcaption>시술 전</figcaption></figure>
+          <figure><img src="assets/img/pmus2-after.jpg" alt="시술 후" width="800" height="1000"><figcaption>시술 후 · 눈썹 + 입술</figcaption></figure>
         </div>
       </div>
       <div class="feat-copy">
@@ -361,9 +361,9 @@
     <p>라이선스 등록 한 번이면 바로 사용할 수 있습니다.</p>
     <div class="apply-cta">
       <!-- TODO: 결제 페이지 연결 -->
-      <a class="btn" href="#" data-todo="결제 링크">지금 도입하기</a>
+      <a class="btn" href="https://pf.kakao.com/_wkiFX" target="_blank" rel="noopener">지금 도입하기</a>
       <!-- TODO: 카카오톡 채널 / 문의 연결 -->
-      <a class="btn btn-ghost" href="#" data-todo="상담 링크">상담 먼저 받기</a>
+      <a class="btn btn-ghost" href="https://pf.kakao.com/_wkiFX" target="_blank" rel="noopener">상담 먼저 받기</a>
     </div>
   </section>
 
@@ -375,6 +375,6 @@
   <p class="foot-note">화면의 얼굴은 시연용 모델 이미지이며, 시술 후 모습은 PMUS 앱으로 만든 결과입니다.</p>
 </footer>
 
-<script src="js/main.js?v=4"></script>
+<script src="js/main.js?v=5"></script>
 </body>
 </html>
