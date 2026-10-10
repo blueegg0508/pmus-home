@@ -47,30 +47,28 @@
         targets.forEach(function (t) { t.classList.add("reveal"); io.observe(t); });
     }
 
-    // 가격: 판매 수(data-sold)로 지금 가격과 남은 얼리버드 자리를 계산한다
+    // 가격: 판매 수(data-sold)로 지금 가격과 남은 얼리버드 자리를 계산한다 (규칙은 js/pricing.js)
     var priceSec = document.getElementById("price");
-    if (priceSec) {
-        var EARLY = 50, BASE = 290000, STEP = 1000, LIST = 490000;
+    var P = window.PMUS_PRICE;
+    if (priceSec && P) {
         var sold = Math.max(0, parseInt(priceSec.getAttribute("data-sold"), 10) || 0);
-        var priceOf = function (n) { return n <= EARLY ? BASE : Math.min(LIST, BASE + (n - EARLY) * STEP); };
-        var won = function (v) { return v.toLocaleString("ko-KR"); };
         var q = function (k) { return priceSec.querySelector('[data-p="' + k + '"]'); };
-        var next = sold + 1, now = priceOf(next);
-        q("now").textContent = won(now);
-        q("vat").textContent = won(Math.round(now * 1.1));
-        if (sold < EARLY) {
-            var left = EARLY - sold;
+        var next = sold + 1, now = P.priceOf(next);
+        q("now").textContent = P.won(now);
+        q("vat").textContent = P.won(P.withVat(now));
+        if (sold < P.EARLY) {
+            var left = P.EARLY - sold;
             q("badge").textContent = "얼리버드";
-            q("left").innerHTML = "얼리버드 " + EARLY + "자리 중 <strong>" + left + "자리</strong> 남음";
-            q("bar").style.width = (sold / EARLY * 100) + "%";
-            q("meter-label").setAttribute("aria-label", "얼리버드 " + EARLY + "자리 중 " + left + "자리 남음");
+            q("left").innerHTML = "얼리버드 " + P.EARLY + "자리 중 <strong>" + left + "자리</strong> 남음";
+            q("bar").style.width = (sold / P.EARLY * 100) + "%";
+            q("meter-label").setAttribute("aria-label", "얼리버드 " + P.EARLY + "자리 중 " + left + "자리 남음");
         } else {
-            q("badge").textContent = now < LIST ? "얼리버드 마감" : "";
-            q("left").innerHTML = now < LIST
-                ? next + "번째 구매 가격 · 다음 구매부터 <strong>" + won(priceOf(next + 1)) + "원</strong>"
+            q("badge").textContent = now < P.LIST ? "얼리버드 마감" : "";
+            q("left").innerHTML = now < P.LIST
+                ? next + "번째 구매 가격 · 다음 구매부터 <strong>" + P.won(P.priceOf(next + 1)) + "원</strong>"
                 : "정가입니다. 더 오르지 않습니다.";
-            q("bar").style.width = ((now - BASE) / (LIST - BASE) * 100) + "%";
-            q("meter-label").setAttribute("aria-label", "정가까지 " + won(LIST - now) + "원 남음");
+            q("bar").style.width = ((now - P.BASE) / (P.LIST - P.BASE) * 100) + "%";
+            q("meter-label").setAttribute("aria-label", "정가까지 " + P.won(P.LIST - now) + "원 남음");
             q("cta").textContent = "지금 신청하기";
         }
     }

@@ -484,6 +484,35 @@ section > * { max-width: var(--w); margin-left: auto; margin-right: auto; }
 .foot { padding: 40px var(--gutter) 56px; text-align: center; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); display: grid; gap: 6px; }
 .foot-brand { font-family: var(--f-latin); letter-spacing: .14em; color: var(--gold); }
 .foot-note { opacity: .75; }
+.foot-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin-top: 14px; }
+.foot-links a { color: var(--text); text-decoration: none; }
+.foot-links a:hover { text-decoration: underline; }
+.foot-biz { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 16px; margin: 8px auto 0; max-width: 760px; }
+.foot-biz div { display: flex; gap: 6px; }
+.foot-biz dt { opacity: .7; }
+.foot-biz dd { margin: 0; }
+/* 아직 받지 않은 정보 — 지어낸 값 대신 '입력 예정' */
+.tbd { color: var(--gold-hi); border: 1px dashed var(--gold-lo); border-radius: 6px; padding: 0 6px; font-size: .92em; }
+.price-notes a { color: var(--gold-hi); }
+
+/* ── 약관 · 정책 문서 ──────────────── */
+.doc { max-width: 760px; margin: 0 auto; padding: clamp(48px, 8vw, 88px) var(--gutter) 80px; }
+.doc > * { max-width: none; }
+.doc-back { display: inline-block; margin-bottom: 28px; font-size: 14px; color: var(--muted); text-decoration: none; }
+.doc-back:hover { color: var(--text); }
+.doc h1 { font-family: var(--f-display); font-weight: 800; font-size: clamp(30px, 4.4vw, 44px); line-height: 1.3; }
+.doc-meta { margin-top: 12px; font-size: 14px; color: var(--muted); }
+.doc-draft { margin-top: 20px; padding: 14px 18px; border-radius: 10px; font-size: 14px; color: var(--gold-hi); background: rgba(201, 154, 114, .10); border: 1px dashed var(--gold-lo); }
+.doc h2 { font-family: var(--f-display); font-weight: 800; font-size: 21px; margin: 44px 0 12px; }
+.doc p, .doc li { color: #DCD2CB; font-size: 16px; }
+.doc p + p { margin-top: 10px; }
+.doc ol, .doc ul { padding-left: 1.3em; display: grid; gap: 6px; margin: 10px 0 0; }
+.doc table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 15px; }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 10px 12px; border: 1px solid var(--line); }
+.doc th { color: var(--muted); font-weight: 600; background: var(--ink-2); }
+.doc strong { color: var(--text); }
+.doc a { color: var(--gold-hi); }
+
 
 /* ── 스크롤 등장 ─────────────────────── */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
