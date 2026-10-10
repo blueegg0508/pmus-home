@@ -37,7 +37,7 @@
     }
 
     // 스크롤 등장
-    var targets = document.querySelectorAll(".section-head, .pain, .shift, .voice-card, .feat, .more-grid, .flow-list, .apply > *");
+    var targets = document.querySelectorAll(".section-head, .pain, .shift, .voice-card, .feat, .more-grid, .consult-scene, .flow-list, .apply > *");
     if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
         var io = new IntersectionObserver(function (entries) {
             entries.forEach(function (e) {
