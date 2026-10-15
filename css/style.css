@@ -568,7 +568,14 @@ section > * { max-width: var(--w); margin-left: auto; margin-right: auto; }
 @media (max-width: 900px) {
     .top-nav { display: none; }
     .hero, .feat { grid-template-columns: minmax(0, 1fr); }
-    .feat-rev .feat-media { order: 0; }
+    /* 주요 기능: 휴대폰에서는 글(작은 제목 → 제목 → 설명)을 먼저 읽고 사진을 본 뒤 항목 목록 */
+    .feat { gap: 0; }
+    .feat-copy { display: contents; }
+    .feat-copy > .feat-kicker { order: 1; }
+    .feat-copy h3 { order: 2; }
+    .feat-copy > p:not(.feat-kicker) { order: 3; }
+    .feat .feat-media, .feat-rev .feat-media { order: 4; margin-top: 28px; }
+    .feat-points { order: 5; }
     .more-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
