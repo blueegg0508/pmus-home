@@ -11,7 +11,7 @@ window.PMUS_BIZ = {
     privacyOfficer: "",  // 개인정보 보호책임자 (이름 · 연락처)
     pg: "",              // 결제대행사 (PG사 이름)
     effectiveDate: "",   // 약관 시행일 (예: 2026년 11월 1일)
-    kakao: "https://pf.kakao.com/_wkiFX"
+    kakao: "https://pf.kakao.com/_xexdcFX"
 };
 
 (function () {
