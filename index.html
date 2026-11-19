@@ -404,58 +404,54 @@
     </ol>
   </section>
 
-  <!-- ⑧ 가격 — 판매 수(data-sold)만 실제 숫자로 바꾸면 남은 자리·현재 가격은 js/main.js 가 계산한다.
-       결제 서버가 붙으면 서버가 이 숫자를 내려준다. 지어낸 숫자를 넣지 않는다. -->
-  <section class="price" id="price" data-sold="0">
+  <!-- ⑧ 가격 — 최종 가격표 (2026-11-20 원장님 결정) · 기간별 일시 결제 · VAT 포함.
+       오늘 날짜로 지금 시기(오픈가 · 행사가 · 정상가)를 골라 js/main.js 가 채운다. 규칙은 js/pricing.js -->
+  <section class="price" id="price">
     <div class="section-head">
-      <p class="eyebrow">얼리버드</p>
-      <h2>그래서, PMUS를 함께 시작할<br>첫 번째 원장님 200분을 찾습니다</h2>
-      <p class="section-lead">얼리버드가 끝나면 구매 한 건마다 1,000원씩 올라 정가 490,000원에서 멈춥니다. 빨리 시작할수록 낮은 가격입니다.</p>
+      <p class="eyebrow" data-p="eyebrow">오픈가 · 2027년 6월까지</p>
+      <h2>필요한 기간만큼,<br>지금이 가장 낮은 가격입니다</h2>
+      <p class="section-lead" data-p="lead">3개월 · 6개월 · 12개월 중에 고르세요. 2027년 7월부터는 행사가, 2028년 1월부터는 정상가로 바뀝니다.</p>
     </div>
 
     <div class="price-wrap">
       <div class="price-card">
-        <p class="price-plan">PMUS 1년 이용권</p>
-        <p class="price-badge" data-p="badge">얼리버드</p>
-        <p class="price-now"><span data-p="now">290,000</span><span class="won">원</span></p>
-        <p class="price-vat">VAT 별도 · 결제 금액 <span data-p="vat">319,000</span>원</p>
-
-        <div class="price-meter" role="img" data-p="meter-label" aria-label="얼리버드 200자리 중 200자리 남음">
-          <span class="price-meter-bar" data-p="bar" style="width:0%"></span>
-        </div>
-        <p class="price-left" data-p="left">얼리버드 200자리 중 <strong>200자리</strong> 남음</p>
+        <p class="price-plan">PMUS 기간 이용권</p>
+        <p class="price-badge" data-p="badge">오픈가 · 스탠다드</p>
+        <ul class="price-plans" data-p="plans">
+          <li><span class="pp-name">3개월</span><span class="pp-price">79,000<small>원</small></span><span class="pp-month">월 26,333원</span></li>
+          <li><span class="pp-name">6개월</span><span class="pp-price">120,000<small>원</small></span><span class="pp-month">월 20,000원</span></li>
+          <li class="pp-best"><span class="pp-name">12개월 <em>추천</em></span><span class="pp-price">179,000<small>원</small></span><span class="pp-month">월 14,917원</span></li>
+        </ul>
+        <p class="price-vat">VAT 포함 · 기간별 일시 결제</p>
 
         <ul class="price-incl">
           <li>눈썹 · 입술 시뮬레이션 모든 기능</li>
           <li>iOS · Android, 기기 1대 등록</li>
-          <li>등록 후 1년 사용</li>
           <li>이용 기간 동안 기능 업데이트 추가 비용 없음</li>
-          <li>얼리버드 무료 세미나 — 설치부터 실전 상담까지</li>
         </ul>
-        <p class="price-day">하루로 나누면 <strong>약 795원</strong> · 커피 한 잔 값보다 적습니다 <span>(290,000원 ÷ 365일, VAT 별도)</span></p>
+        <p class="price-day" data-p="day">12개월권을 하루로 나누면 <strong>약 490원</strong> <span>(179,000원 ÷ 365일, VAT 포함)</span></p>
 
-        <a class="btn price-btn" href="https://pf.kakao.com/_xexdcFX" target="_blank" rel="noopener" data-p="cta">얼리버드로 신청하기</a>
+        <a class="btn price-btn" href="https://pf.kakao.com/_xexdcFX" target="_blank" rel="noopener" data-p="cta">오픈가로 신청하기</a>
         <p class="price-how">결제 연결 전까지는 카카오톡으로 신청을 받습니다.</p>
         <p class="price-policy">신청 전에 <a href="refund.html">결제 · 환불 규정</a>을 꼭 확인해 주세요. 키를 등록해 이용을 시작한 뒤에는 단순 변심 환불이 되지 않습니다.</p>
       </div>
 
       <div class="price-rule">
-        <h3>가격이 정해지는 방법</h3>
-        <ol class="price-steps">
-          <li><span class="price-step-n">1~200번째</span><span class="price-step-v">290,000원</span><span class="price-step-d">얼리버드</span></li>
-          <li><span class="price-step-n">201번째부터</span><span class="price-step-v">+1,000원씩</span><span class="price-step-d">구매 한 건마다 다음 가격이 오릅니다</span></li>
-          <li><span class="price-step-n">400번째부터</span><span class="price-step-v">490,000원</span><span class="price-step-d">정가에서 더 오르지 않습니다</span></li>
+        <h3>가격 일정</h3>
+        <ol class="price-steps price-steps-3" data-p="steps">
+          <li class="on"><span class="price-step-n">2027년 6월까지</span><span class="price-step-v">오픈가</span><span class="price-step-d">스탠다드 · 3개월 79,000원 · 6개월 120,000원 · 12개월 179,000원</span></li>
+          <li><span class="price-step-n">2027년 7월부터</span><span class="price-step-v">행사가</span><span class="price-step-d">프로 · 옵션1 · 3개월 99,000원 · 6개월 150,000원 · 12개월 239,000원</span></li>
+          <li><span class="price-step-n">2028년 1월부터</span><span class="price-step-v">정상가</span><span class="price-step-d">프로 · 옵션1,2 · 3개월 119,000원 · 6개월 180,000원 · 12개월 299,000원</span></li>
         </ol>
         <ul class="price-notes">
-          <li>모든 가격은 VAT 별도이며, 결제 금액은 VAT 10%를 더한 금액입니다.</li>
-          <li>1년 뒤 연장은 구매 시기와 관계없이 정가 490,000원(VAT 별도)입니다.</li>
-          <li>남은 자리와 현재 가격은 실제 판매 수로 표시합니다. 환불이 있어도 판매 수는 줄지 않습니다.</li>
-          <li>구매 전 <strong>7일 무료 체험</strong>으로 먼저 써 보세요. 라이선스 키 <strong>등록 전</strong>에는 7일 이내 전액 환불, <strong>등록 후</strong>에는 단순 변심 환불이 되지 않습니다. 1년 이용권은 언제든 중도 해지할 수 있습니다(이용 기간·위약금 공제). <a href="refund.html">환불 규정 보기</a></li>
+          <li>모든 가격은 VAT 포함이며, 결제하는 날의 가격이 적용됩니다.</li>
+          <li>이용 기간이 길수록 한 달 가격이 낮습니다. 12개월권은 3개월권보다 한 달에 11,000원 이상 아낍니다.</li>
+          <li>구매 전 <strong>7일 무료 체험</strong>으로 먼저 써 보세요. 라이선스 키 <strong>등록 전</strong>에는 7일 이내 전액 환불, <strong>등록 후</strong>에는 단순 변심 환불이 되지 않습니다. 기간 이용권은 언제든 중도 해지할 수 있습니다(이용 기간 · 위약금 공제). <a href="refund.html">환불 규정 보기</a></li>
         </ul>
 
         <div class="price-faq">
           <p class="price-faq-q">“조금 더 기다렸다가 살까요?”</p>
-          <p>물론 괜찮습니다. PMUS는 원장님들의 현장 의견을 받아 계속 좋아집니다. 다만 얼리버드 200자리가 끝나면 구매 한 건마다 가격이 1,000원씩 올라갑니다. 지금 시작하시면 가장 낮은 가격으로, 앞으로 추가될 기능도 이용 기간 동안 함께 받아 보실 수 있습니다.</p>
+          <p data-p="faq">물론 괜찮습니다. 먼저 7일 무료 체험으로 충분히 써 보세요. 다만 오픈가는 2027년 6월까지이고, 7월부터는 12개월권이 239,000원으로 바뀝니다. 지금 시작하시면 가장 낮은 가격으로, 앞으로 추가될 기능도 이용 기간 동안 함께 받아 보실 수 있습니다.</p>
         </div>
       </div>
     </div>

@@ -47,30 +47,27 @@
         targets.forEach(function (t) { t.classList.add("reveal"); io.observe(t); });
     }
 
-    // 가격: 판매 수(data-sold)로 지금 가격과 남은 얼리버드 자리를 계산한다 (규칙은 js/pricing.js)
+    // 가격: 오늘 날짜로 지금 시기(오픈가 · 행사가 · 정상가)를 골라 채운다 (표는 js/pricing.js).
+    // HTML 에는 오픈가가 미리 들어 있어 스크립트가 없어도 그대로 보인다.
     var priceSec = document.getElementById("price");
     var P = window.PMUS_PRICE;
     if (priceSec && P) {
-        var sold = Math.max(0, parseInt(priceSec.getAttribute("data-sold"), 10) || 0);
         var q = function (k) { return priceSec.querySelector('[data-p="' + k + '"]'); };
-        var next = sold + 1, now = P.priceOf(next);
-        q("now").textContent = P.won(now);
-        q("vat").textContent = P.won(P.withVat(now));
-        if (sold < P.EARLY) {
-            var left = P.EARLY - sold;
-            q("badge").textContent = "얼리버드";
-            q("left").innerHTML = "얼리버드 " + P.EARLY + "자리 중 <strong>" + left + "자리</strong> 남음";
-            q("bar").style.width = (sold / P.EARLY * 100) + "%";
-            q("meter-label").setAttribute("aria-label", "얼리버드 " + P.EARLY + "자리 중 " + left + "자리 남음");
-        } else {
-            q("badge").textContent = now < P.LIST ? "얼리버드 마감" : "";
-            q("left").innerHTML = now < P.LIST
-                ? next + "번째 구매 가격 · 다음 구매부터 <strong>" + P.won(P.priceOf(next + 1)) + "원</strong>"
-                : "정가입니다. 더 오르지 않습니다.";
-            q("bar").style.width = ((now - P.BASE) / (P.LIST - P.BASE) * 100) + "%";
-            q("meter-label").setAttribute("aria-label", "정가까지 " + P.won(P.LIST - now) + "원 남음");
-            q("cta").textContent = "지금 신청하기";
-        }
+        var cur = P.periodOn(new Date()), idx = P.PERIODS.indexOf(cur), nxt = P.PERIODS[idx + 1];
+        var md = function (s) { var p = s.split("-"); return p[0] + "년 " + parseInt(p[1], 10) + "월"; };
+        q("eyebrow").textContent = cur.label + (cur.until ? " · " + md(cur.until) + "까지" : "");
+        q("badge").textContent = cur.label + " · " + cur.edition;
+        q("plans").innerHTML = P.PLANS.map(function (pl) {
+            return '<li' + (pl.id === "year" ? ' class="pp-best"' : "") + '><span class="pp-name">' + pl.name + (pl.id === "year" ? " <em>추천</em>" : "") +
+                '</span><span class="pp-price">' + P.won(cur[pl.id]) + '<small>원</small></span><span class="pp-month">월 ' + P.won(P.monthly(cur[pl.id], pl.months)) + "원</span></li>";
+        }).join("");
+        q("day").innerHTML = "12개월권을 하루로 나누면 <strong>약 " + P.won(Math.round(cur.year / 365 / 10) * 10) + "원</strong> <span>(" + P.won(cur.year) + "원 ÷ 365일, VAT 포함)</span>";
+        q("cta").textContent = cur.label + "로 신청하기";
+        q("lead").textContent = "3개월 · 6개월 · 12개월 중에 고르세요." + P.PERIODS.slice(idx + 1).map(function (p) { return " " + md(p.from) + "부터는 " + p.label; }).join(",") + (nxt ? "로 바뀝니다." : "");
+        [].forEach.call(q("steps").children, function (li, i) { li.className = i === idx ? "on" : i < idx ? "past" : ""; });
+        q("faq").textContent = nxt
+            ? "물론 괜찮습니다. 먼저 7일 무료 체험으로 충분히 써 보세요. 다만 " + cur.label + "는 " + md(cur.until) + "까지이고, " + md(nxt.from) + "부터는 12개월권이 " + P.won(nxt.year) + "원으로 바뀝니다. 지금 시작하시면 더 낮은 가격으로, 앞으로 추가될 기능도 이용 기간 동안 함께 받아 보실 수 있습니다."
+            : "물론 괜찮습니다. 먼저 7일 무료 체험으로 충분히 써 보세요. 써 보시고 필요한 기간만큼 고르시면 됩니다.";
     }
 
     // 아직 연결하지 않은 버튼은 누르면 알려 준다 (결제·상담 링크 연결 전)
