@@ -661,3 +661,23 @@ section > * { max-width: var(--w); margin-left: auto; margin-right: auto; }
 
 /* 갤럭시는 크롬으로 설치 — 삼성 인터넷 설치 앱은 사진 고를 때 작업 선택 창이 먼저 뜬다 (2026-10-21) */
 .install-warn { margin: 10px 0 0; padding: 8px 10px; border-radius: 8px; background: rgba(255,152,0,.12); border: 1px solid rgba(255,152,0,.45); font-size: 13px; line-height: 1.55; color: inherit; }
+
+/* ── 언어 고르기 · 번역본 안내 (2026-11-21) ── */
+.top-end { display: flex; align-items: center; gap: 10px; }
+.lang-pick {
+    appearance: none; -webkit-appearance: none;
+    font: inherit; font-size: 13px; color: var(--text);
+    background: var(--ink-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23A89A92' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 10px center;
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 7px 28px 7px 12px; cursor: pointer;
+}
+.lang-pick:hover { border-color: var(--gold-lo); }
+.lang-pick:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.doc-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 28px; }
+.doc-top .doc-back { margin-bottom: 0; }
+.legal-note { display: grid; gap: 10px; margin: 0 0 28px; padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--ink-2); }
+.legal-note p { margin: 0; font-size: 14px; line-height: 1.6; color: var(--text); }
+.legal-note button { justify-self: start; font: inherit; font-size: 13px; color: var(--gold-hi); background: none; border: 1px solid var(--gold-lo); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+/* 다른 언어는 메뉴 이름이 길다 — 한 줄로 두고, 좁은 화면에서는 메뉴를 일찍 감춘다 (한국어는 그대로) */
+.top-nav a, .top .btn-small { white-space: nowrap; }
+@media (max-width: 1180px) { html:not([data-lang="ko"])[data-lang] .top-nav { display: none; } }

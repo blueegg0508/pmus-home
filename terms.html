@@ -1,7 +1,11 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" translate="no" class="notranslate">
 <head>
 <meta charset="utf-8">
+<meta name="google" content="notranslate">
+<!-- 언어팩 (2026-11-21) — lang.js 를 i18n.js 보다 먼저 -->
+<script src="js/lang.js?v=2"></script>
+<script src="js/i18n.js?v=2"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>이용약관 · PMUS</title>
 <meta name="robots" content="noindex">
@@ -10,11 +14,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Nanum+Myeongjo:wght@700;800&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-<link rel="stylesheet" href="css/style.css?v=11">
+<link rel="stylesheet" href="css/style.css?v=12">
 </head>
-<body>
+<body data-i18n-blocks data-legal>
 <main class="doc">
-  <a class="doc-back" href="index.html">← PMUS 처음으로</a>
+  <div class="doc-top"><a class="doc-back" href="index.html">← PMUS 처음으로</a><span data-lang-pick></span></div>
   <h1>이용약관</h1>
   <p class="doc-meta">시행일: <span data-biz="effectiveDate"></span></p>
   <p class="doc-draft">예시안입니다. 사업자 정보가 확정되면 '입력 예정' 칸을 채우고, 게시 전에 전문가 검토를 받을 예정입니다.</p>
@@ -97,6 +101,6 @@
     <div><dt>이메일</dt><dd data-biz="email"></dd></div>
   </dl>
 </footer>
-<script src="js/biz.js?v=36"></script>
+<script src="js/biz.js?v=37"></script>
 </body>
 </html>

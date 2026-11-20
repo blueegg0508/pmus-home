@@ -19,7 +19,8 @@ window.PMUS_BIZ = {
     var biz = window.PMUS_BIZ;
     document.querySelectorAll("[data-biz]").forEach(function (el) {
         var v = biz[el.getAttribute("data-biz")];
-        if (v) { el.textContent = v; el.classList.remove("tbd"); }
+        // 상호 · 대표 · 주소 같은 사업자 정보는 번역하지 않는다 (언어팩, 2026-11-21)
+        if (v) { el.textContent = v; el.classList.remove("tbd"); el.setAttribute("data-no-i18n", ""); }
         else { el.textContent = "입력 예정"; el.classList.add("tbd"); }
     });
 })();
