@@ -111,6 +111,23 @@
     renderPrice();
     if (I && I.lang !== "ko" && I.ready) I.ready.then(renderPrice);
 
+    // 엠버서더 모집 링크 (2026-11-24) — www.pmus.io/?ref=엠버서더번호 로 들어오면 기억해 두고,
+    // 앱으로 가는 단추(PMUS 열기 · 무료 체험)에 같은 번호를 붙인다. 앱은 체험 신청 때 그 엠버서더를 미리 골라 둔다.
+    (function () {
+        var REF = "pmus.ref", ref = "";
+        try {
+            var q = new URLSearchParams(location.search).get("ref");
+            if (q && /^[A-Za-z0-9_.-]{1,60}$/.test(q)) localStorage.setItem(REF, q);
+            ref = localStorage.getItem(REF) || "";
+        } catch (e) { /* 저장소를 못 쓰는 창 */ }
+        if (!ref) return;
+        document.querySelectorAll('a[href^="https://blueegg0508.github.io/pmus/"]').forEach(function (a) {
+            var u = new URL(a.getAttribute("href"));
+            u.searchParams.set("ref", ref);
+            a.setAttribute("href", u.toString());
+        });
+    })();
+
     // 아직 연결하지 않은 버튼은 누르면 알려 준다 (결제·상담 링크 연결 전)
     document.querySelectorAll("[data-todo]").forEach(function (a) {
         a.addEventListener("click", function (e) {
