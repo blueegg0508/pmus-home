@@ -699,4 +699,4 @@ section > * { max-width: var(--w); margin-left: auto; margin-right: auto; }
 .reel-sound .on { display: none; } .reel.sound .reel-sound .on { display: inline; } .reel.sound .reel-sound .off { display: none; }
 .reel-more { margin-top: 22px; }
 .reel-more a { color: var(--gold-hi); text-decoration: none; border-bottom: 1px solid var(--gold-lo); }
-@media (min-width: 1000px) { .reel-row { grid-auto-flow: row; grid-template-columns: repeat(3, minmax(0, 300px)); grid-auto-columns: auto; overflow: visible; justify-content: start; } }
+@media (min-width: 1000px) { .reel-row { grid-auto-flow: row; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-columns: auto; overflow: visible; } }

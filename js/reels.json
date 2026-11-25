@@ -1,22 +1,7 @@
 {
-  "note": "PMUS 인스타그램 릴스 — 홈페이지 '영상으로 보기' 칸. 새것이 위. tools/reels-update.mjs 가 고친다 (손으로 고쳐도 됨).",
+  "note": "PMUS 인스타그램 릴스 — 홈페이지 영상으로 보기 칸. 새것이 위. hidden 의 아이디는 원장님이 빼라고 한 것이라 다시 넣지 않는다 (2026-11-25).",
   "updated": "2026-11-25",
   "items": [
-    {
-      "id": "DgKh1ElxHSh"
-    },
-    {
-      "id": "DgKhksKxL2c"
-    },
-    {
-      "id": "DgKhULIRlmL"
-    },
-    {
-      "id": "DgKhDeVxT-f"
-    },
-    {
-      "id": "DgKgQ9rxaVo"
-    },
     {
       "id": "Df3ebtbAdnr"
     },
@@ -25,6 +10,15 @@
     },
     {
       "id": "DfmR7EaRAD2"
+    },
+    {
+      "id": "DgKgQ9rxaVo"
     }
+  ],
+  "hidden": [
+    "DgKh1ElxHSh",
+    "DgKhksKxL2c",
+    "DgKhULIRlmL",
+    "DgKhDeVxT-f"
   ]
 }
