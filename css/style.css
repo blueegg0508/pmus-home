@@ -681,3 +681,13 @@ section > * { max-width: var(--w); margin-left: auto; margin-right: auto; }
 /* 다른 언어는 메뉴 이름이 길다 — 한 줄로 두고, 좁은 화면에서는 메뉴를 일찍 감춘다 (한국어는 그대로) */
 .top-nav a, .top .btn-small { white-space: nowrap; }
 @media (max-width: 1180px) { html:not([data-lang="ko"])[data-lang] .top-nav { display: none; } }
+
+/* ── 영상으로 보기 (인스타그램 릴스, 2026-11-25) ── */
+.reels { background: var(--ink-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.reel-row { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(300px, 340px); gap: 20px; overflow-x: auto;
+            scroll-snap-type: x mandatory; padding-bottom: 12px; -webkit-overflow-scrolling: touch; }
+.reel { scroll-snap-align: start; min-height: 560px; border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.03); }
+.reel .instagram-media { margin: 0 !important; min-width: 0 !important; width: 100% !important; max-width: 100% !important; border-radius: 14px !important; }
+.reel-more { margin-top: 22px; }
+.reel-more a { color: var(--gold-hi); text-decoration: none; border-bottom: 1px solid var(--gold-lo); }
+@media (min-width: 1100px) { .reel-row { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); grid-auto-columns: auto; overflow: visible; } }
