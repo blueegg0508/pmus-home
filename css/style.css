@@ -682,12 +682,21 @@ section > * { max-width: var(--w); margin-left: auto; margin-right: auto; }
 .top-nav a, .top .btn-small { white-space: nowrap; }
 @media (max-width: 1180px) { html:not([data-lang="ko"])[data-lang] .top-nav { display: none; } }
 
-/* ── 영상으로 보기 (인스타그램 릴스, 2026-11-25) ── */
+/* ── 영상으로 보기 (인스타그램 릴스, 2026-11-25) — 검정 틀, 홈페이지 안에서 바로 재생 ── */
 .reels { background: var(--ink-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.reel-row { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(300px, 340px); gap: 20px; overflow-x: auto;
+.reel-row { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(250px, 300px); gap: 18px; overflow-x: auto;
             scroll-snap-type: x mandatory; padding-bottom: 12px; -webkit-overflow-scrolling: touch; }
-.reel { scroll-snap-align: start; min-height: 560px; border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.03); }
-.reel .instagram-media { margin: 0 !important; min-width: 0 !important; width: 100% !important; max-width: 100% !important; border-radius: 14px !important; }
+.reel { margin: 0; scroll-snap-align: start; background: #0B090C; border: 1px solid rgba(201,154,114,.22); border-radius: 18px; overflow: hidden;
+        box-shadow: 0 18px 40px rgba(0,0,0,.35); cursor: pointer; }
+.reel-top { display: flex; align-items: center; gap: 10px; padding: 12px 14px; }
+.reel-ava { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle at 30% 30%, #6a1426, #2a0610);
+            border: 1px solid var(--gold-lo); font: 600 8px/1 serif; letter-spacing: .04em; color: var(--gold-hi); }
+.reel-name { font-size: 13px; font-weight: 600; color: #EDE3DA; letter-spacing: .02em; }
+.reel-vid { position: relative; aspect-ratio: 9 / 16; background: #000; }
+.reel-vid video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.reel-sound { position: absolute; right: 10px; bottom: 10px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(0,0,0,.55);
+              color: #fff; font-size: 16px; display: grid; place-items: center; pointer-events: none; }
+.reel-sound .on { display: none; } .reel.sound .reel-sound .on { display: inline; } .reel.sound .reel-sound .off { display: none; }
 .reel-more { margin-top: 22px; }
 .reel-more a { color: var(--gold-hi); text-decoration: none; border-bottom: 1px solid var(--gold-lo); }
-@media (min-width: 1100px) { .reel-row { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); grid-auto-columns: auto; overflow: visible; } }
+@media (min-width: 1000px) { .reel-row { grid-auto-flow: row; grid-template-columns: repeat(3, minmax(0, 300px)); grid-auto-columns: auto; overflow: visible; justify-content: start; } }
