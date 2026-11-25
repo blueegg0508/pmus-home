@@ -6,8 +6,8 @@ window.PMUS_BIZ = {
     bizNo: "834-03-04036", // 사업자등록번호
     mailOrderNo: "",     // 통신판매업 신고번호
     address: "경기도 평택시 비전2로 320, 504동 4층 405호 (죽백동, 가내마을 5단지)", // 사업장 주소
-    phone: "",           // 전화
-    email: "",           // 이메일
+    phone: "010-2088-9415", // 전화
+    email: "2026pmus@gmail.com", // 이메일
     privacyOfficer: "",  // 개인정보 보호책임자 (이름 · 연락처)
     pg: "",              // 결제대행사 (PG사 이름)
     effectiveDate: "",   // 약관 시행일 (예: 2026년 11월 1일)
