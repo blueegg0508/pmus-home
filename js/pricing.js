@@ -4,9 +4,9 @@
 window.PMUS_PRICE = (function () {
     "use strict";
     var PERIODS = [
-        { id: "open", label: "오픈가", edition: "스탠다드", from: "", until: "2027-06-30", m3: 79000, m6: 120000, year: 179000 },
-        { id: "event", label: "행사가", edition: "프로 · 옵션1", from: "2027-07-01", until: "2027-12-31", m3: 99000, m6: 150000, year: 239000 },
-        { id: "regular", label: "정상가", edition: "프로 · 옵션1,2", from: "2028-01-01", until: "", m3: 119000, m6: 180000, year: 299000 }
+        { id: "open", label: "오픈가", edition: "스탠다드", from: "", until: "2026-12-31", m3: 79000, m6: 120000, year: 179000 },
+        { id: "event", label: "행사가", edition: "프로 · 옵션1", from: "2027-01-01", until: "2027-06-30", m3: 99000, m6: 150000, year: 239000 },
+        { id: "regular", label: "정상가", edition: "프로 · 옵션1,2", from: "2027-07-01", until: "", m3: 119000, m6: 180000, year: 299000 }
     ];
     var PLANS = [{ id: "m3", name: "3개월", months: 3, days: 91 }, { id: "m6", name: "6개월", months: 6, days: 182 }, { id: "year", name: "12개월", months: 12, days: 365 }];
     function ymd(d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
